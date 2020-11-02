@@ -24,3 +24,8 @@ class NovelItem(scrapy.Item):
     content = scrapy.Field()
     title = scrapy.Field()
     spider_name = scrapy.Field()
+
+class SplashItem(scrapy.Item):
+    image_urls =scrapy.Field()
+    images =scrapy.Field()
+    title =scrapy.Field()

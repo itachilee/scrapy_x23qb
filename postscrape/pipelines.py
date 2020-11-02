@@ -9,13 +9,17 @@ from itemadapter import ItemAdapter
 
 from pymongo import MongoClient
 from gridfs import *
+from scrapy.pipelines.images import ImagesPipeline
+import scrapy
+
 client = MongoClient()
 collention = client['x23qb']['xuanhuan']
 
 novel_item = {}
+
+
 class PostscrapePipeline:
-    def open_spider(self, spider):
-        """定义items，用来保存每个item"""
+    def __init__(self):
         self.items = []
 
     def process_item(self, item, spider):
@@ -25,14 +29,25 @@ class PostscrapePipeline:
         self.items.append(item)
         return item
 
-
     def close_spider(self, spider):
-        """在爬虫结束的时候，将items按照'num'字段排列，并最终合并成一个文件"""
-        with open('test.txt', 'w', encoding='utf-8') as f:
-            # 所有章节按num字段排序
-            self.items.sort(key=lambda i: i['num'])
+        if spider.name == 'novel':
+            """在爬虫结束的时候，将items按照'num'字段排列，并最终合并成一个文件"""
+            with open('test.txt', 'w', encoding='utf-8') as f:
+                # 所有章节按num字段排序
+                self.items.sort(key=lambda i: i['num'])
 
-            for item in self.items:
-                print(item['num'])
-                f.write("\r\n"+item['title']+"\r\n")
-                f.write(item['content'])
+                for item in self.items:
+                    print(item['num'])
+                    f.write("\r\n" + item['title'] + "\r\n")
+                    f.write(item['content'])
+
+
+class SplashPipeline(ImagesPipeline):
+
+    # 发生图片下载请求
+    def get_media_requests(self, item, info):
+        print(item['image_urls'])
+        yield scrapy.Request(url=item['image_urls'])
+
+    def file_path(self, request, response=None, info=None):
+        return 'test'

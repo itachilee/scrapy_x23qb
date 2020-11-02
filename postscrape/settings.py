@@ -64,7 +64,9 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+    'scrapy.pipelines.images.ImagesPipeline': 1,
     'postscrape.pipelines.PostscrapePipeline': 300,
+     'postscrape.pipelines.SplashPipeline': 299,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -89,5 +91,8 @@ ITEM_PIPELINES = {
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 FEED_EXPORT_ENCODING = 'utf-8'
 
-LOG_LEVEL = 'WARNING'
+# LOG_LEVEL = 'WARNING'
 # LOG_FILE = './%s.log' % time.time()
+
+#图片存储位置，会在项目文件下建一个image文件
+IMAGES_STORE = 'image'
