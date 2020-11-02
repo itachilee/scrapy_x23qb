@@ -20,7 +20,6 @@ class PostscrapePipeline:
 
     def process_item(self, item, spider):
         item['spider_name'] = spider.name
-        print(item)
         if item['spider_name'] == 'x23qb':
             collention.insert(dict(item))
         self.items.append(item)
@@ -30,10 +29,10 @@ class PostscrapePipeline:
     def close_spider(self, spider):
         """在爬虫结束的时候，将items按照'num'字段排列，并最终合并成一个文件"""
         with open('test.txt', 'w', encoding='utf-8') as f:
-            # 所有章节按order字段排序
+            # 所有章节按num字段排序
             self.items.sort(key=lambda i: i['num'])
 
             for item in self.items:
-                print(item['title'])
+                print(item['num'])
                 f.write("\r\n"+item['title']+"\r\n")
                 f.write(item['content'])

@@ -19,5 +19,8 @@ class PostscrapeItem(scrapy.Item):
     spider_name = scrapy.Field()
 
 
-
-
+class NovelItem(scrapy.Item):
+    num = scrapy.Field()
+    content = scrapy.Field()
+    title = scrapy.Field()
+    spider_name = scrapy.Field()
