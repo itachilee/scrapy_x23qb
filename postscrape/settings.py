@@ -91,7 +91,7 @@ ITEM_PIPELINES = {
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 FEED_EXPORT_ENCODING = 'utf-8'
 
-# LOG_LEVEL = 'WARNING'
+LOG_LEVEL = 'WARNING'
 # LOG_FILE = './%s.log' % time.time()
 
 #图片存储位置，会在项目文件下建一个image文件

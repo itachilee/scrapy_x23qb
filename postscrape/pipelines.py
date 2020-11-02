@@ -11,6 +11,7 @@ from pymongo import MongoClient
 from gridfs import *
 from scrapy.pipelines.images import ImagesPipeline
 import scrapy
+import re
 
 client = MongoClient()
 collention = client['x23qb']['xuanhuan']
@@ -46,8 +47,15 @@ class SplashPipeline(ImagesPipeline):
 
     # 发生图片下载请求
     def get_media_requests(self, item, info):
-        print(item['image_urls'])
-        yield scrapy.Request(url=item['image_urls'])
+        for image_url in item['image_urls']:
+            yield scrapy.Request(image_url, meta={'item': item})
 
     def file_path(self, request, response=None, info=None):
-        return 'test'
+        item = request.meta['item']  # 通过上面的meta传递过来item
+        file_name = item['title']
+        # 过滤windows符号
+        file_name = re.sub(r'[？\\*|“<>:/]', '', file_name)
+        file_name += '.jpg'
+        # 分文件夹存储的关键：{0}对应着name；{1}对应着image_guid
+        filename = u'{0}/{1}'.format('splash', file_name)
+        return filename
