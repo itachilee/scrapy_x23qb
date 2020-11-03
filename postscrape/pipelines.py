@@ -1,12 +1,4 @@
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-
-
-# useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-
 from pymongo import MongoClient
 from gridfs import *
 from scrapy.pipelines.images import ImagesPipeline
@@ -25,6 +17,7 @@ class PostscrapePipeline:
 
     def process_item(self, item, spider):
         item['spider_name'] = spider.name
+        print(item)
         if item['spider_name'] == 'x23qb':
             collention.insert(dict(item))
         self.items.append(item)
