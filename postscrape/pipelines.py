@@ -34,7 +34,7 @@ class PostscrapePipeline:
         if spider.name == 'novel':
             """在爬虫结束的时候，将items按照'num'字段排列，并最终合并成一个文件"""
             with open('test.txt', 'w', encoding='utf-8') as f:
-                # 所有章节按num字段排序
+                """所有章节按num字段排序"""
                 self.items.sort(key=lambda i: i['num'])
 
                 for item in self.items:
