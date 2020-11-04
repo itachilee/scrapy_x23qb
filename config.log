@@ -1,7 +1,7 @@
-2020-11-03 17:53:26,499-scrapy.utils.log-INFO-Scrapy 2.4.0 started (bot: postscrape)
-2020-11-03 17:53:26,499-scrapy.utils.log-INFO-Versions: lxml 4.5.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 20.3.0, Python 3.7.9 (default, Aug 31 2020, 17:10:11) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1h  22 Sep 2020), cryptography 3.1.1, Platform Windows-10-10.0.18362-SP0
-2020-11-03 17:53:26,499-scrapy.utils.log-DEBUG-Using reactor: twisted.internet.selectreactor.SelectReactor
-2020-11-03 17:53:26,502-scrapy.crawler-INFO-Overridden settings:
+2020-11-04 11:21:50,624-scrapy.utils.log-INFO-Scrapy 2.4.0 started (bot: postscrape)
+2020-11-04 11:21:50,625-scrapy.utils.log-INFO-Versions: lxml 4.5.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 20.3.0, Python 3.7.9 (default, Aug 31 2020, 17:10:11) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1h  22 Sep 2020), cryptography 3.1.1, Platform Windows-10-10.0.18362-SP0
+2020-11-04 11:21:50,625-scrapy.utils.log-DEBUG-Using reactor: twisted.internet.selectreactor.SelectReactor
+2020-11-04 11:21:50,627-scrapy.crawler-INFO-Overridden settings:
 {'BOT_NAME': 'postscrape',
  'FEED_EXPORT_ENCODING': 'utf-8',
  'LOG_LEVEL': 'WARNING',
@@ -10,12 +10,13 @@
  'SPIDER_MODULES': ['postscrape.spiders'],
  'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
                '(KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36 '}
-2020-11-03 17:53:26,511-scrapy.extensions.telnet-INFO-Telnet Password: d7289bb8d6c27f8d
-2020-11-03 17:53:26,521-scrapy.middleware-INFO-Enabled extensions:
+2020-11-04 11:21:50,636-scrapy.extensions.telnet-INFO-Telnet Password: ac3f3cdb83a9379b
+2020-11-04 11:21:50,649-scrapy.middleware-INFO-Enabled extensions:
 ['scrapy.extensions.corestats.CoreStats',
  'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.feedexport.FeedExporter',
  'scrapy.extensions.logstats.LogStats']
-2020-11-03 17:53:26,709-scrapy.middleware-INFO-Enabled downloader middlewares:
+2020-11-04 11:21:50,804-scrapy.middleware-INFO-Enabled downloader middlewares:
 ['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
  'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
@@ -28,43 +29,465 @@
  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
  'scrapy.downloadermiddlewares.stats.DownloaderStats']
-2020-11-03 17:53:26,711-scrapy.middleware-INFO-Enabled spider middlewares:
+2020-11-04 11:21:50,806-scrapy.middleware-INFO-Enabled spider middlewares:
 ['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
  'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
  'scrapy.spidermiddlewares.referer.RefererMiddleware',
  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
  'scrapy.spidermiddlewares.depth.DepthMiddleware']
-2020-11-03 17:53:26,800-py.warnings-WARNING-D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\pipelines\media.py:135: ScrapyDeprecationWarning: file_path(self, request, response=None, info=None) is deprecated, please use file_path(self, request, response=None, info=None, *, item=None)
+2020-11-04 11:21:50,897-py.warnings-WARNING-D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\pipelines\media.py:135: ScrapyDeprecationWarning: file_path(self, request, response=None, info=None) is deprecated, please use file_path(self, request, response=None, info=None, *, item=None)
   self._check_signature(func)
 
-2020-11-03 17:53:26,801-scrapy.middleware-INFO-Enabled item pipelines:
+2020-11-04 11:21:50,897-scrapy.middleware-INFO-Enabled item pipelines:
 ['scrapy.pipelines.images.ImagesPipeline',
  'postscrape.pipelines.SplashPipeline',
  'postscrape.pipelines.PostscrapePipeline']
-2020-11-03 17:53:26,801-scrapy.core.engine-INFO-Spider opened
-2020-11-03 17:53:26,803-scrapy.extensions.logstats-INFO-Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2020-11-03 17:53:26,804-scrapy.extensions.telnet-INFO-Telnet console listening on 127.0.0.1:6023
-2020-11-03 17:53:27,077-scrapy.core.engine-DEBUG-Crawled (200) <GET https://movie.douban.com/robots.txt> (referer: None)
-2020-11-03 17:53:27,246-scrapy.core.engine-DEBUG-Crawled (200) <GET https://movie.douban.com/top250> (referer: None)
-2020-11-03 17:53:27,361-scrapy.core.engine-INFO-Closing spider (finished)
-2020-11-03 17:53:27,361-scrapy.statscollectors-INFO-Dumping Scrapy stats:
-{'downloader/request_bytes': 620,
- 'downloader/request_count': 2,
- 'downloader/request_method_count/GET': 2,
- 'downloader/response_bytes': 11285,
- 'downloader/response_count': 2,
- 'downloader/response_status_count/200': 2,
- 'elapsed_time_seconds': 0.557918,
+2020-11-04 11:21:50,898-scrapy.core.engine-INFO-Spider opened
+2020-11-04 11:21:50,900-scrapy.extensions.logstats-INFO-Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-11-04 11:21:50,901-scrapy.extensions.telnet-INFO-Telnet console listening on 127.0.0.1:6023
+2020-11-04 11:21:51,152-scrapy.core.engine-DEBUG-Crawled (200) <GET https://movie.douban.com/robots.txt> (referer: None)
+2020-11-04 11:21:51,285-scrapy.core.engine-DEBUG-Crawled (200) <GET https://movie.douban.com/top250?start=0> (referer: None)
+2020-11-04 11:21:51,389-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '肖申克的救赎', '中文名称-港澳台': '/月黑高飞(港)  /  刺激1995(台)', '原名称': '/The Shawshank Redemption'}
+2020-11-04 11:21:51,390-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '霸王别姬', '中文名称-港澳台': None, '原名称': '/再见，我的妾  /  Farewell My Concubine'}
+2020-11-04 11:21:51,391-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '阿甘正传', '中文名称-港澳台': '/福雷斯特·冈普', '原名称': '/Forrest Gump'}
+2020-11-04 11:21:51,391-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '这个杀手不太冷', '中文名称-港澳台': '/杀手莱昂  /  终极追杀令(台)', '原名称': '/Léon'}
+2020-11-04 11:21:51,392-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '泰坦尼克号', '中文名称-港澳台': '/铁达尼号(港 / 台)', '原名称': '/Titanic'}
+2020-11-04 11:21:51,393-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '美丽人生', '中文名称-港澳台': '/一个快乐的传说(港)  /  Life Is Beautiful', '原名称': '/La vita è bella'}
+2020-11-04 11:21:51,393-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '千与千寻', '中文名称-港澳台': '/神隐少女(台)  /  千与千寻的神隐', '原名称': '/千と千尋の神隠し'}
+2020-11-04 11:21:51,394-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '辛德勒的名单', '中文名称-港澳台': '/舒特拉的名单(港)  /  辛德勒名单', '原名称': "/Schindler's List"}
+2020-11-04 11:21:51,395-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '盗梦空间', '中文名称-港澳台': '/潜行凶间(港)  /  全面启动(台)', '原名称': '/Inception'}
+2020-11-04 11:21:51,395-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '忠犬八公的故事', '中文名称-港澳台': '/秋田犬八千(港)  /  忠犬小八(台)', '原名称': "/Hachi: A Dog's Tale"}
+2020-11-04 11:21:51,396-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '海上钢琴师', '中文名称-港澳台': '/声光伴我飞(港)  /  一九零零的传奇', '原名称': "/La leggenda del pianista sull'oceano"}
+2020-11-04 11:21:51,397-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '星际穿越', '中文名称-港澳台': '/星际启示录(港)  /  星际效应(台)', '原名称': '/Interstellar'}
+2020-11-04 11:21:51,398-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '楚门的世界', '中文名称-港澳台': '/真人Show(港)  /  真人戏', '原名称': '/The Truman Show'}
+2020-11-04 11:21:51,398-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '三傻大闹宝莱坞', '中文名称-港澳台': '/三个傻瓜(台)  /  作死不离3兄弟(港)', '原名称': '/3 Idiots'}
+2020-11-04 11:21:51,399-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '机器人总动员', '中文名称-港澳台': '/太空奇兵·威E(港)  /  瓦力(台)', '原名称': '/WALL·E'}
+2020-11-04 11:21:51,400-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '放牛班的春天', '中文名称-港澳台': '/歌声伴我心(港)  /  唱诗班男孩', '原名称': '/Les choristes'}
+2020-11-04 11:21:51,400-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '大话西游之大圣娶亲', '中文名称-港澳台': '/西游记完结篇仙履奇缘  /  齐天大圣西游记', '原名称': '/西遊記大結局之仙履奇緣'}
+2020-11-04 11:21:51,406-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '疯狂动物城', '中文名称-港澳台': '/优兽大都会(港)  /  动物方城市(台)', '原名称': '/Zootopia'}
+2020-11-04 11:21:51,406-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '无间道', '中文名称-港澳台': '/Infernal Affairs  /  Mou gaan dou', '原名称': '/無間道'}
+2020-11-04 11:21:51,407-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '教父', '中文名称-港澳台': "/Mario Puzo's The Godfather", '原名称': '/The Godfather'}
+2020-11-04 11:21:51,408-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '龙猫', '中文名称-港澳台': '/邻居托托罗  /  邻家的豆豆龙', '原名称': '/となりのトトロ'}
+2020-11-04 11:21:51,408-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '当幸福来敲门', '中文名称-港澳台': '/寻找快乐的故事(港)  /  追求快乐', '原名称': '/The Pursuit of Happyness'}
+2020-11-04 11:21:51,409-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '怦然心动', '中文名称-港澳台': '/萌动青春  /  青春萌动', '原名称': '/Flipped'}
+2020-11-04 11:21:51,409-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=0>
+{'中文名称-大陆': '触不可及', '中文名称-港澳台': '/闪亮人生(港)  /  逆转人生(台)', '原名称': '/Intouchables'}
+2020-11-04 11:21:51,565-scrapy.core.engine-DEBUG-Crawled (200) <GET https://movie.douban.com/top250?start=25> (referer: https://movie.douban.com/top250?start=0)
+2020-11-04 11:21:51,674-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '控方证人', '中文名称-港澳台': '/雄才伟略  /  情妇', '原名称': '/Witness for the Prosecution'}
+2020-11-04 11:21:51,675-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '蝙蝠侠：黑暗骑士', '中文名称-港澳台': '/蝙蝠侠前传2：黑暗骑士  /  黑暗骑士(台)', '原名称': '/The Dark Knight'}
+2020-11-04 11:21:51,675-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '活着', '中文名称-港澳台': None, '原名称': '/人生  /  Lifetimes'}
+2020-11-04 11:21:51,676-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '末代皇帝', '中文名称-港澳台': '/末代皇帝溥仪(港)', '原名称': '/The Last Emperor'}
+2020-11-04 11:21:51,677-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '寻梦环游记', '中文名称-港澳台': '/玩转极乐园(港)  /  可可夜总会(台)', '原名称': '/Coco'}
+2020-11-04 11:21:51,678-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '乱世佳人', '中文名称-港澳台': '/飘', '原名称': '/Gone with the Wind'}
+2020-11-04 11:21:51,681-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '指环王3：王者无敌', '中文名称-港澳台': '/魔戒三部曲：王者再临(台 / 港) ', '原名称': '/The Lord of the Rings: The Return of the King'}
+2020-11-04 11:21:51,682-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '摔跤吧！爸爸', '中文名称-港澳台': '/我和我的冠军女儿(台)  /  打死不离3父女(港)', '原名称': '/Dangal'}
+2020-11-04 11:21:51,683-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '飞屋环游记', '中文名称-港澳台': '/冲天救兵(港)  /  天外奇迹(台)', '原名称': '/Up'}
+2020-11-04 11:21:51,683-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '少年派的奇幻漂流', '中文名称-港澳台': '/少年Pi的奇幻漂流  /  漂流少年Pi', '原名称': '/Life of Pi'}
+2020-11-04 11:21:51,684-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '十二怒汉', '中文名称-港澳台': '/12怒汉  /  十二怒汉', '原名称': '/12 Angry Men'}
+2020-11-04 11:21:51,685-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '哈利·波特与魔法石', '中文名称-港澳台': '/哈利波特1：神秘的魔法石(港 / 台) ', '原名称': "/Harry Potter and the Sorcerer's Stone"}
+2020-11-04 11:21:51,687-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '鬼子来了', '中文名称-港澳台': None, '原名称': '/Devils on the Doorstep'}
+2020-11-04 11:21:51,687-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '哈尔的移动城堡', '中文名称-港澳台': '/哈尔移动城堡(港)  /  霍尔的移动城堡(台)', '原名称': '/ハウルの動く城'}
+2020-11-04 11:21:51,690-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '大话西游之月光宝盒', '中文名称-港澳台': '/西游记101回月光宝盒  /  齐天大圣东游记', '原名称': '/西遊記第壹佰零壹回之月光寶盒'}
+2020-11-04 11:21:51,690-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '我不是药神', '中文名称-港澳台': None, '原名称': '/中国药神  /  印度药神'}
+2020-11-04 11:21:51,691-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '罗马假日', '中文名称-港澳台': '/金枝玉叶(港)  /  罗马假期(台)', '原名称': '/Roman Holiday'}
+2020-11-04 11:21:51,691-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '闻香识女人', '中文名称-港澳台': '/女人香  /  女人的芳香', '原名称': '/Scent of a Woman'}
+2020-11-04 11:21:51,692-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '天堂电影院', '中文名称-港澳台': '/星光伴我心(港)  /  新天堂乐园(台)', '原名称': '/Nuovo Cinema Paradiso'}
+2020-11-04 11:21:51,694-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '搏击俱乐部', '中文名称-港澳台': '/搏击会(港)  /  斗阵俱乐部(台)', '原名称': '/Fight Club'}
+2020-11-04 11:21:51,695-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=25>
+{'中文名称-大陆': '大闹天宫', '中文名称-港澳台': None, '原名称': '/大闹天宫 上下集  /  The Monkey King'}
+2020-11-04 11:21:51,831-scrapy.core.engine-DEBUG-Crawled (200) <GET https://movie.douban.com/top250?start=50> (referer: https://movie.douban.com/top250?start=25)
+2020-11-04 11:21:51,935-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '教父2', '中文名称-港澳台': '/教父续集(港)  /  教父II', '原名称': '/The Godfather: Part Ⅱ'}
+2020-11-04 11:21:51,936-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '猫鼠游戏', '中文名称-港澳台': '/逍遥法外  /  神鬼交锋(台)', '原名称': '/Catch Me If You Can'}
+2020-11-04 11:21:51,936-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '狮子王', '中文名称-港澳台': '/狮子王3D', '原名称': '/The Lion King'}
+2020-11-04 11:21:51,937-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '死亡诗社', '中文名称-港澳台': '/暴雨骄阳(港)  /  春风化雨(台)', '原名称': '/Dead Poets Society'}
+2020-11-04 11:21:51,938-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '指环王2：双塔奇兵', '中文名称-港澳台': '/魔戒二部曲：双城奇谋  /  指环王II：双塔', '原名称': '/The Lord of the Rings: The Two Towers'}
+2020-11-04 11:21:51,938-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '钢琴家', '中文名称-港澳台': '/钢琴战曲(港)  /  战地琴人(台)', '原名称': '/The Pianist'}
+2020-11-04 11:21:51,939-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '窃听风暴', '中文名称-港澳台': '/窃听者(港)  /  他人的生活', '原名称': '/Das Leben der Anderen'}
+2020-11-04 11:21:51,940-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '指环王1：魔戒再现', '中文名称-港澳台': '/魔戒首部曲：魔戒现身  /  指环王I：护戒使者', '原名称': '/The Lord of the Rings: The Fellowship of the Ring'}
+2020-11-04 11:21:51,942-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '黑客帝国', '中文名称-港澳台': '/22世纪杀人网络(港)  /  廿二世纪杀人网络(港)', '原名称': '/The Matrix'}
+2020-11-04 11:21:51,943-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '饮食男女', '中文名称-港澳台': '/Eat Drink Man Woman', '原名称': '/飲食男女'}
+2020-11-04 11:21:51,943-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '美丽心灵', '中文名称-港澳台': '/有你终生美丽(港)  /  美丽境界(台)', '原名称': '/A Beautiful Mind'}
+2020-11-04 11:21:51,944-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '两杆大烟枪', '中文名称-港澳台': '/够姜四小强(港)  /  两根枪管(台)', '原名称': '/Lock, Stock and Two Smoking Barrels'}
+2020-11-04 11:21:51,945-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '让子弹飞', '中文名称-港澳台': None, '原名称': '/让子弹飞一会儿  /  火烧云'}
+2020-11-04 11:21:51,945-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '飞越疯人院', '中文名称-港澳台': '/飞越杜鹃窝(台)  /  飞越喜鹊巢', '原名称': "/One Flew Over the Cuckoo's Nest"}
+2020-11-04 11:21:51,946-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '本杰明·巴顿奇事', '中文名称-港澳台': '/奇幻逆缘(港)  /  班杰明的奇幻旅程(台)', '原名称': '/The Curious Case of Benjamin Button'}
+2020-11-04 11:21:51,947-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '绿皮书', '中文名称-港澳台': '/绿簿旅友(港)  /  幸福绿皮书(台)', '原名称': '/Green Book'}
+2020-11-04 11:21:51,948-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '看不见的客人', '中文名称-港澳台': '/死无对证(港)  /  布局(台)', '原名称': '/Contratiempo'}
+2020-11-04 11:21:51,948-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '海蒂和爷爷', '中文名称-港澳台': '/飘零燕(港)  /  海蒂', '原名称': '/Heidi'}
+2020-11-04 11:21:51,949-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '西西里的美丽传说', '中文名称-港澳台': '/真爱伴我行(台)  /  玛莲娜', '原名称': '/Malèna'}
+2020-11-04 11:21:51,950-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '拯救大兵瑞恩', '中文名称-港澳台': '/雷霆救兵(港)  /  抢救雷恩大兵(台)', '原名称': '/Saving Private Ryan'}
+2020-11-04 11:21:51,955-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '穿条纹睡衣的男孩', '中文名称-港澳台': '/穿条纹衣服的男孩  /  穿条纹衣的男孩', '原名称': '/The Boy in the Striped Pajamas'}
+2020-11-04 11:21:51,956-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '情书', '中文名称-港澳台': '/When I Close My Eyes  /  Letters of Love', '原名称': '/Love Letter'}
+2020-11-04 11:21:51,956-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '音乐之声', '中文名称-港澳台': '/仙乐飘飘处处闻(港)  /  真善美(台)', '原名称': '/The Sound of Music'}
+2020-11-04 11:21:51,957-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=50>
+{'中文名称-大陆': '海豚湾', '中文名称-港澳台': '/血色海湾(台)  /  海湾', '原名称': '/The Cove'}
+2020-11-04 11:21:52,080-scrapy.core.engine-DEBUG-Crawled (200) <GET https://movie.douban.com/top250?start=75> (referer: https://movie.douban.com/top250?start=50)
+2020-11-04 11:21:52,185-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '美国往事', '中文名称-港澳台': '/四海兄弟(台)  /  义薄云天(港)', '原名称': '/Once Upon a Time in America'}
+2020-11-04 11:21:52,186-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '致命魔术', '中文名称-港澳台': '/顶尖对决(台)  /  死亡魔法(港)', '原名称': '/The Prestige'}
+2020-11-04 11:21:52,186-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '低俗小说', '中文名称-港澳台': '/危险人物(港)  /  黑色追缉令(台)', '原名称': '/Pulp Fiction'}
+2020-11-04 11:21:52,187-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '沉默的羔羊', '中文名称-港澳台': '/沉默的羔羊', '原名称': '/The Silence of the Lambs'}
+2020-11-04 11:21:52,188-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '七宗罪', '中文名称-港澳台': '/火线追缉令(台)  /  7宗罪', '原名称': '/Se7en'}
+2020-11-04 11:21:52,188-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '禁闭岛', '中文名称-港澳台': '/不赦岛(港)  /  隔离岛(台)', '原名称': '/Shutter Island'}
+2020-11-04 11:21:52,189-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '蝴蝶效应', '中文名称-港澳台': '/蝴蝶效应', '原名称': '/The Butterfly Effect'}
+2020-11-04 11:21:52,191-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '心灵捕手', '中文名称-港澳台': '/骄阳似我(港)  /  心灵捕手', '原名称': '/Good Will Hunting'}
+2020-11-04 11:21:52,191-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '布达佩斯大饭店', '中文名称-港澳台': '/布达佩斯大酒店(港)  /  欢迎来到布达佩斯大饭店(台)', '原名称': '/The Grand Budapest Hotel'}
+2020-11-04 11:21:52,192-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '春光乍泄', '中文名称-港澳台': '/一起快乐  /  Happy Together', '原名称': '/春光乍洩'}
+2020-11-04 11:21:52,193-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '被嫌弃的松子的一生', '中文名称-港澳台': '/花样奇缘(港)  /  令人讨厌的松子的一生(台)', '原名称': '/嫌われ松子の一生'}
+2020-11-04 11:21:52,193-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '摩登时代', '中文名称-港澳台': '/The Masses  /  Les Temps modernes', '原名称': '/Modern Times'}
+2020-11-04 11:21:52,194-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '阿凡达', '中文名称-港澳台': '/天神下凡(港)  /  化身', '原名称': '/Avatar'}
+2020-11-04 11:21:52,195-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '哈利·波特与死亡圣器(下)', '中文名称-港澳台': '/哈利波特7：死神的圣物2(港 / 台) ', '原名称': '/Harry Potter and the Deathly Hallows: Part 2'}
+2020-11-04 11:21:52,196-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '剪刀手爱德华', '中文名称-港澳台': '/幻海奇缘(港)  /  剪刀手爱德华', '原名称': '/Edward Scissorhands'}
+2020-11-04 11:21:52,196-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '喜剧之王', '中文名称-港澳台': '/King of Comedy', '原名称': '/喜劇之王'}
+2020-11-04 11:21:52,197-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '勇敢的心', '中文名称-港澳台': '/惊世未了缘(港)  /  梅尔吉勃逊之英雄本色(台)', '原名称': '/Braveheart'}
+2020-11-04 11:21:52,198-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '致命ID', '中文名称-港澳台': '/杀人游戏  /  致命身份', '原名称': '/Identity'}
+2020-11-04 11:21:52,198-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '加勒比海盗', '中文名称-港澳台': '/加勒比海盗1：黑珍珠号的诅咒  /  神鬼奇航：鬼盗船魔咒(台)', '原名称': '/Pirates of the Caribbean: The Curse of the Black Pearl'}
+2020-11-04 11:21:52,202-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '天使爱美丽', '中文名称-港澳台': '/艾蜜莉的异想世界(台)  /  天使艾米莉', '原名称': "/Le fabuleux destin d'Amélie Poulain"}
+2020-11-04 11:21:52,204-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '狩猎', '中文名称-港澳台': '/诬网(港)  /  谎言的烙印(台)', '原名称': '/Jagten'}
+2020-11-04 11:21:52,205-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '断背山', '中文名称-港澳台': '/断臂山  /  BBM', '原名称': '/Brokeback Mountain'}
+2020-11-04 11:21:52,205-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=75>
+{'中文名称-大陆': '请以你的名字呼唤我', '中文名称-港澳台': '/以你的名字呼唤我(港 / 台) ', '原名称': '/Call Me by Your Name'}
+2020-11-04 11:21:52,362-scrapy.core.engine-DEBUG-Crawled (200) <GET https://movie.douban.com/top250?start=100> (referer: https://movie.douban.com/top250?start=75)
+2020-11-04 11:21:52,466-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '幽灵公主', '中文名称-港澳台': '/魔法公主(台)  /  幽灵少女', '原名称': '/もののけ姫'}
+2020-11-04 11:21:52,467-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '红辣椒', '中文名称-港澳台': '/盗梦侦探(港 / 台) ', '原名称': '/パプリカ'}
+2020-11-04 11:21:52,468-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '阳光灿烂的日子', '中文名称-港澳台': None, '原名称': '/In the Heat of the Sun'}
+2020-11-04 11:21:52,471-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '第六感', '中文名称-港澳台': '/鬼眼(港)  /  灵异第六感(台)', '原名称': '/The Sixth Sense'}
+2020-11-04 11:21:52,471-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '重庆森林', '中文名称-港澳台': '/Chungking Express', '原名称': '/重慶森林'}
+2020-11-04 11:21:52,472-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '入殓师', '中文名称-港澳台': '/礼仪师之奏鸣曲(港)  /  礼仪师(台)', '原名称': '/おくりびと'}
+2020-11-04 11:21:52,474-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '消失的爱人', '中文名称-港澳台': '/失踪的女孩  /  失踪女孩', '原名称': '/Gone Girl'}
+2020-11-04 11:21:52,475-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '唐伯虎点秋香', '中文名称-港澳台': '/Flirting Scholar', '原名称': '/唐伯虎點秋香'}
+2020-11-04 11:21:52,475-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '爱在黎明破晓前', '中文名称-港澳台': '/情留半天(港)  /  爱在黎明破晓时(台)', '原名称': '/Before Sunrise'}
+2020-11-04 11:21:52,485-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '一一', '中文名称-港澳台': None, '原名称': '/Yi yi  /  Yi yi: A One and a Two'}
+2020-11-04 11:21:52,486-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '蝙蝠侠：黑暗骑士崛起', '中文名称-港澳台': '/蝙蝠侠前传3：黑暗骑士崛起  /  黑暗骑士：黎明升起(台)', '原名称': '/The Dark Knight Rises'}
+2020-11-04 11:21:52,490-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '侧耳倾听', '中文名称-港澳台': '/心之谷(台)  /  梦幻街少女(港)', '原名称': '/耳をすませば'}
+2020-11-04 11:21:52,490-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '超脱', '中文名称-港澳台': '/人间师格(台)', '原名称': '/Detachment'}
+2020-11-04 11:21:52,491-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '倩女幽魂', '中文名称-港澳台': None, '原名称': '/倩女幽魂(87版)  /  倩女幽魂：妖魔道'}
+2020-11-04 11:21:52,492-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '无人知晓', '中文名称-港澳台': '/谁知赤子心(港)  /  无人知晓的夏日清晨(台)', '原名称': '/誰も知らない'}
+2020-11-04 11:21:52,492-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '超能陆战队', '中文名称-港澳台': '/大英雄联盟(港)  /  大英雄天团(台)', '原名称': '/Big Hero 6'}
+2020-11-04 11:21:52,493-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '玛丽和马克思', '中文名称-港澳台': '/巧克力情缘(台)  /  同是天涯寂寞客', '原名称': '/Mary and Max'}
+2020-11-04 11:21:52,494-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '甜蜜蜜', '中文名称-港澳台': None, '原名称': '/Comrades: Almost a Love Story'}
+2020-11-04 11:21:52,494-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '萤火之森', '中文名称-港澳台': '/萤火之社  /  Hotarubi no mori e', '原名称': '/蛍火の杜へ'}
+2020-11-04 11:21:52,495-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '借东西的小人阿莉埃蒂', '中文名称-港澳台': '/借物少女艾莉缇(台)  /  借东西的小矮人亚莉亚蒂(港)', '原名称': '/借りぐらしのアリエッティ'}
+2020-11-04 11:21:52,496-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '告白', '中文名称-港澳台': None, '原名称': '/自白  /  母亲'}
+2020-11-04 11:21:52,496-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=100>
+{'中文名称-大陆': '驯龙高手', '中文名称-港澳台': '/驯龙记(港)', '原名称': '/How to Train Your Dragon'}
+2020-11-04 11:21:52,607-scrapy.core.engine-DEBUG-Crawled (200) <GET https://movie.douban.com/top250?start=125> (referer: https://movie.douban.com/top250?start=100)
+2020-11-04 11:21:52,712-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '大鱼', '中文名称-港澳台': '/大鱼奇缘(港)  /  大智若鱼(台)', '原名称': '/Big Fish'}
+2020-11-04 11:21:52,716-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '爱在日落黄昏时', '中文名称-港澳台': '/日落巴黎(港)  /  爱在日落巴黎时(台)', '原名称': '/Before Sunset'}
+2020-11-04 11:21:52,717-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '幸福终点站', '中文名称-港澳台': '/机场客运站(港)  /  航站情缘(台)', '原名称': '/The Terminal'}
+2020-11-04 11:21:52,718-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '射雕英雄传之东成西就', '中文名称-港澳台': '/东成西就  /  大英雄 (日本)', '原名称': '/射鵰英雄傳之東成西就'}
+2020-11-04 11:21:52,718-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '功夫', '中文名称-港澳台': None, '原名称': '/功夫3D  /  Kung Fu Hustle'}
+2020-11-04 11:21:52,719-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '人生果实', '中文名称-港澳台': '/积存时间的生活(台)  /  人生水果', '原名称': '/人生フルーツ'}
+2020-11-04 11:21:52,719-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '完美的世界', '中文名称-港澳台': '/强盗保镳', '原名称': '/A Perfect World'}
+2020-11-04 11:21:52,722-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '怪兽电力公司', '中文名称-港澳台': '/怪兽公司(港)  /  怪物公司', '原名称': '/Monsters, Inc.'}
+2020-11-04 11:21:52,724-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '神偷奶爸', '中文名称-港澳台': '/卑鄙的我  /  坏蛋奖门人(港)', '原名称': '/Despicable Me'}
+2020-11-04 11:21:52,727-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '天书奇谭', '中文名称-港澳台': None, '原名称': '/The Legend of Sealed Book  /  Secrets of the Heavenly Book'}
+2020-11-04 11:21:52,728-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '哈利·波特与阿兹卡班的囚徒', '中文名称-港澳台': '/哈利波特3：阿兹卡班的逃犯(港 / 台) ', '原名称': '/Harry Potter and the Prisoner of Azkaban'}
+2020-11-04 11:21:52,729-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '玩具总动员3', '中文名称-港澳台': '/反斗奇兵3(港)  /  玩具的故事3', '原名称': '/Toy Story 3'}
+2020-11-04 11:21:52,729-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '傲慢与偏见', '中文名称-港澳台': '/傲慢与偏见2005  /  Pride And Prejudice', '原名称': '/Pride & Prejudice'}
+2020-11-04 11:21:52,731-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '血战钢锯岭', '中文名称-港澳台': '/钢锯岭  /  钢铁英雄(台)', '原名称': '/Hacksaw Ridge'}
+2020-11-04 11:21:52,732-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '教父3', '中文名称-港澳台': '/教父第三集  /  教父 III', '原名称': '/The Godfather: Part III'}
+2020-11-04 11:21:52,732-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '时空恋旅人', '中文名称-港澳台': '/时空旅恋人  /  回到最爱的一天(港)', '原名称': '/About Time'}
+2020-11-04 11:21:52,736-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '风之谷', '中文名称-港澳台': '/风谷少女  /  Kaze no tani no Naushika', '原名称': '/風の谷のナウシカ'}
+2020-11-04 11:21:52,737-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '哪吒闹海', '中文名称-港澳台': None, '原名称': "/Prince Nezha's Triumph Against Dragon King  /  Nezha Conquers the Dragon King"}
+2020-11-04 11:21:52,737-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '被解救的姜戈', '中文名称-港澳台': '/被解放的姜戈  /  决杀令(台)', '原名称': '/Django Unchained'}
+2020-11-04 11:21:52,738-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '电锯惊魂', '中文名称-港澳台': '/夺魂锯(台)  /  恐惧斗室(港)', '原名称': '/Saw'}
+2020-11-04 11:21:52,739-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '喜宴', '中文名称-港澳台': '/The Wedding Banquet', '原名称': '/囍宴'}
+2020-11-04 11:21:52,739-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=125>
+{'中文名称-大陆': '哈利·波特与密室', '中文名称-港澳台': '/哈利波特2：消失的密室(港 / 台) ', '原名称': '/Harry Potter and the Chamber of Secrets'}
+2020-11-04 11:21:52,859-scrapy.core.engine-DEBUG-Crawled (200) <GET https://movie.douban.com/top250?start=150> (referer: https://movie.douban.com/top250?start=125)
+2020-11-04 11:21:52,963-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '七武士', '中文名称-港澳台': '/七侠四义(港)  /  七剑客(港)', '原名称': '/七人の侍'}
+2020-11-04 11:21:52,963-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '上帝之城', '中文名称-港澳台': '/无主之城 (港)  /  无法无天 (台)', '原名称': '/Cidade de Deus'}
+2020-11-04 11:21:52,964-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '我是山姆', '中文名称-港澳台': '/不一样的爸爸(港)  /  他不笨，他是我爸爸(台)', '原名称': '/I Am Sam'}
+2020-11-04 11:21:52,965-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '英雄本色', '中文名称-港澳台': None, '原名称': '/A Better Tomorrow  /  Gangland Boss'}
+2020-11-04 11:21:52,966-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '头号玩家', '中文名称-港澳台': '/玩家一号  /  挑战者1号(港)', '原名称': '/Ready Player One'}
+2020-11-04 11:21:52,966-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '谍影重重3', '中文名称-港澳台': '/叛谍追击3：最后通牒(港)  /  神鬼认证：最后通牒 (台)', '原名称': '/The Bourne Ultimatum'}
+2020-11-04 11:21:52,968-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '一个叫欧维的男人决定去死', '中文名称-港澳台': '/明天别再来敲门(台)  /  想死冇咁易(港)', '原名称': '/En man som heter Ove'}
+2020-11-04 11:21:52,969-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '岁月神偷', '中文名称-港澳台': '/1969太空漫游  /  Echoes Of The Rainbow', '原名称': '/歲月神偷'}
+2020-11-04 11:21:52,970-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '三块广告牌', '中文名称-港澳台': '/广告牌杀人事件(港)  /  意外(台)', '原名称': '/Three Billboards Outside Ebbing, Missouri'}
+2020-11-04 11:21:52,970-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '纵横四海', '中文名称-港澳台': '/Once a Thief', '原名称': '/緃横四海'}
+2020-11-04 11:21:52,971-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '疯狂原始人', '中文名称-港澳台': '/古鲁家族(港 / 台) ', '原名称': '/The Croods'}
+2020-11-04 11:21:52,972-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '达拉斯买家俱乐部', '中文名称-港澳台': '/续命枭雄(港)  /  药命俱乐部(台)', '原名称': '/Dallas Buyers Club'}
+2020-11-04 11:21:52,972-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '心迷宫', '中文名称-港澳台': None, '原名称': '/殡棺  /  The Coffin in the Mountain'}
+2020-11-04 11:21:52,973-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '记忆碎片', '中文名称-港澳台': '/凶心人(港)  /  记忆拼图(台)', '原名称': '/Memento'}
+2020-11-04 11:21:52,974-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '卢旺达饭店', '中文名称-港澳台': '/卢安达饭店(台)', '原名称': '/Hotel Rwanda'}
+2020-11-04 11:21:52,974-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '花样年华', '中文名称-港澳台': '/In the Mood for Love', '原名称': '/花樣年華'}
+2020-11-04 11:21:52,975-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '未麻的部屋', '中文名称-港澳台': '/蓝色恐惧(港 / 台) ', '原名称': '/Perfect Blue'}
+2020-11-04 11:21:52,976-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '你的名字。', '中文名称-港澳台': '/你的名字  /  君之名', '原名称': '/君の名は。'}
+2020-11-04 11:21:52,977-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '荒蛮故事', '中文名称-港澳台': '/蛮荒故事  /  生命中最抓狂的小事(台)', '原名称': '/Relatos salvajes'}
+2020-11-04 11:21:52,977-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '黑客帝国3：矩阵革命', '中文名称-港澳台': '/22世纪杀人网络3：惊变世纪(港)  /  骇客任务完结篇：最后战役(台)', '原名称': '/The Matrix Revolutions'}
+2020-11-04 11:21:52,978-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '模仿游戏', '中文名称-港澳台': '/解码游戏(港)  /  模拟游戏', '原名称': '/The Imitation Game'}
+2020-11-04 11:21:52,979-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '萤火虫之墓', '中文名称-港澳台': '/再见萤火虫(港)  /  萤火挽歌', '原名称': '/火垂るの墓'}
+2020-11-04 11:21:52,980-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '爆裂鼓手', '中文名称-港澳台': '/鼓动真我(港)  /  进击的鼓手(台)', '原名称': '/Whiplash'}
+2020-11-04 11:21:52,982-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '贫民窟的百万富翁', '中文名称-港澳台': '/一百万零一夜(港)  /  贫民百万富翁(台)', '原名称': '/Slumdog Millionaire'}
+2020-11-04 11:21:52,983-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=150>
+{'中文名称-大陆': '东邪西毒', '中文名称-港澳台': '/Ashes of Time', '原名称': '/東邪西毒'}
+2020-11-04 11:21:53,107-scrapy.core.engine-DEBUG-Crawled (200) <GET https://movie.douban.com/top250?start=175> (referer: https://movie.douban.com/top250?start=150)
+2020-11-04 11:21:53,213-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '真爱至上', '中文名称-港澳台': '/真的恋爱了(港)  /  爱是您，爱是我(台)', '原名称': '/Love Actually'}
+2020-11-04 11:21:53,214-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '忠犬八公物语', '中文名称-港澳台': '/八千公物语  /  阿八的故事', '原名称': '/ハチ公物語'}
+2020-11-04 11:21:53,220-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '黑天鹅', '中文名称-港澳台': '/夺命黑天鹅  /  霸王别鹅(豆友译名)', '原名称': '/Black Swan'}
+2020-11-04 11:21:53,220-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '头脑特工队', '中文名称-港澳台': '/玩转脑朋友(港)  /  脑筋急转弯(台)', '原名称': '/Inside Out'}
+2020-11-04 11:21:53,221-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '海街日记', '中文名称-港澳台': '/海街女孩日记(港)  /  Kamakura Diary', '原名称': '/海街diary'}
+2020-11-04 11:21:53,223-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '你看起来好像很好吃', '中文名称-港澳台': '/你看起来很好吃(台)  /  你看上去好像很好吃', '原名称': '/おまえうまそうだな'}
+2020-11-04 11:21:53,224-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '无敌破坏王', '中文名称-港澳台': '/破坏王拉尔夫  /  破坏王大冒险', '原名称': '/Wreck-It Ralph'}
+2020-11-04 11:21:53,224-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '惊魂记', '中文名称-港澳台': '/精神病患者  /  触目惊心(港)', '原名称': '/Psycho'}
+2020-11-04 11:21:53,225-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '雨人', '中文名称-港澳台': '/手足情未了(港)  /  手足情深', '原名称': '/Rain Man'}
+2020-11-04 11:21:53,226-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '冰川时代', '中文名称-港澳台': '/冰河世纪  /  冰原历险记', '原名称': '/Ice Age'}
+2020-11-04 11:21:53,226-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '恋恋笔记本', '中文名称-港澳台': '/忘了·忘不了(港)  /  手札情缘(台)', '原名称': '/The Notebook'}
+2020-11-04 11:21:53,227-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '小偷家族', '中文名称-港澳台': '/Shoplifters  /  Une Affaire de Famille', '原名称': '/万引き家族'}
+2020-11-04 11:21:53,228-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '绿里奇迹', '中文名称-港澳台': '/绿色奇迹(台)  /  绿色英里', '原名称': '/The Green Mile'}
+2020-11-04 11:21:53,228-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '恐怖游轮', '中文名称-港澳台': '/汪洋血迷宮(台)  /  轮回三角', '原名称': '/Triangle'}
+2020-11-04 11:21:53,229-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '疯狂的石头', '中文名称-港澳台': None, '原名称': '/Crazy Stone'}
+2020-11-04 11:21:53,230-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '奇迹男孩', '中文名称-港澳台': '/奇迹', '原名称': '/Wonder'}
+2020-11-04 11:21:53,230-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '二十二', '中文名称-港澳台': None, '原名称': '/Twenty Two  /  22'}
+2020-11-04 11:21:53,231-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '海边的曼彻斯特', '中文名称-港澳台': '/情系海边之城(港)', '原名称': '/Manchester by the Sea'}
+2020-11-04 11:21:53,232-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '爱在午夜降临前', '中文名称-港澳台': '/情约半生(港)  /  爱在午夜希腊时(台)', '原名称': '/Before Midnight'}
+2020-11-04 11:21:53,233-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '房间', '中文名称-港澳台': '/不存在的房间(台)  /  抖室(港)', '原名称': '/Room'}
+2020-11-04 11:21:53,234-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '魔女宅急便', '中文名称-港澳台': '/魔女琪琪(台)  /  小魔女限时专送', '原名称': '/魔女の宅急便'}
+2020-11-04 11:21:53,235-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '雨中曲', '中文名称-港澳台': '/万花嬉春(港 / 台) ', '原名称': "/Singin' in the Rain"}
+2020-11-04 11:21:53,235-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '虎口脱险', '中文名称-港澳台': '/横冲直撞出重围(港)  /  大進擊(台)', '原名称': '/La grande vadrouille'}
+2020-11-04 11:21:53,236-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=175>
+{'中文名称-大陆': '人工智能', '中文名称-港澳台': '/AI人工智慧', '原名称': '/Artificial Intelligence: AI'}
+2020-11-04 11:21:53,372-scrapy.core.engine-DEBUG-Crawled (200) <GET https://movie.douban.com/top250?start=200> (referer: https://movie.douban.com/top250?start=175)
+2020-11-04 11:21:53,476-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=200>
+{'中文名称-大陆': '罗生门', '中文名称-港澳台': '/Rashomon', '原名称': '/羅生門'}
+2020-11-04 11:21:53,477-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=200>
+{'中文名称-大陆': '终结者2：审判日', '中文名称-港澳台': '/终结者2  /  终结者2：末日审判', '原名称': '/Terminator 2: Judgment Day'}
+2020-11-04 11:21:53,478-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=200>
+{'中文名称-大陆': '可可西里', '中文名称-港澳台': None, '原名称': '/Kekexili: Mountain Patrol'}
+2020-11-04 11:21:53,482-scrapy.core.scraper-DEBUG-Scraped from <200 https://movie.douban.com/top250?start=200>
+{'中文名称-大陆': '2001太空漫游', '中文名称-港澳台': '/2001：星际漫游  /  2001：太空奥德赛', '原名称': '/2001: A Space Odyssey'}
+2020-11-04 11:21:53,483-scrapy.core.scraper-ERROR-Spider error processing <GET https://movie.douban.com/top250?start=200> (referer: https://movie.douban.com/top250?start=175)
+Traceback (most recent call last):
+  File "D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 340, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\anaconda\envs\scrapyMobi\lib\site-packages\scrapy\core\spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "D:\pythonProject\scrapyMobi\postscrape\postscrape\spiders\doubanmovie.py", line 24, in parse
+    movie.xpath('.//div[@class="bd"]/p[@class="quote"]/span/text()').extract_first())
+  File "D:\anaconda\envs\scrapyMobi\lib\re.py", line 194, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+TypeError: expected string or bytes-like object
+2020-11-04 11:21:53,485-scrapy.core.engine-INFO-Closing spider (finished)
+2020-11-04 11:21:53,485-scrapy.extensions.feedexport-INFO-Stored json feed (205 items) in: douban.json
+2020-11-04 11:21:53,486-scrapy.statscollectors-INFO-Dumping Scrapy stats:
+{'downloader/request_bytes': 3780,
+ 'downloader/request_count': 10,
+ 'downloader/request_method_count/GET': 10,
+ 'downloader/response_bytes': 96365,
+ 'downloader/response_count': 10,
+ 'downloader/response_status_count/200': 10,
+ 'elapsed_time_seconds': 2.584939,
  'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2020, 11, 3, 9, 53, 27, 361318),
+ 'finish_time': datetime.datetime(2020, 11, 4, 3, 21, 53, 485603),
+ 'item_scraped_count': 205,
+ 'log_count/ERROR': 1,
  'log_count/WARNING': 1,
- 'response_received_count': 2,
+ 'request_depth_max': 8,
+ 'response_received_count': 10,
  'robotstxt/request_count': 1,
  'robotstxt/response_count': 1,
  'robotstxt/response_status_count/200': 1,
- 'scheduler/dequeued': 1,
- 'scheduler/dequeued/memory': 1,
- 'scheduler/enqueued': 1,
- 'scheduler/enqueued/memory': 1,
- 'start_time': datetime.datetime(2020, 11, 3, 9, 53, 26, 803400)}
-2020-11-03 17:53:27,361-scrapy.core.engine-INFO-Spider closed (finished)
+ 'scheduler/dequeued': 9,
+ 'scheduler/dequeued/memory': 9,
+ 'scheduler/enqueued': 9,
+ 'scheduler/enqueued/memory': 9,
+ 'spider_exceptions/TypeError': 1,
+ 'start_time': datetime.datetime(2020, 11, 4, 3, 21, 50, 900664)}
+2020-11-04 11:21:53,486-scrapy.core.engine-INFO-Spider closed (finished)

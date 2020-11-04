@@ -17,11 +17,15 @@ class PostscrapePipeline:
 
     def process_item(self, item, spider):
         item['spider_name'] = spider.name
-        print(item)
+        adict={}
+        adict['中文名称-大陆'] = item['title']
+        adict['中文名称-港澳台'] = item['nick_title']
+        adict['原名称'] = item['eng_title']
+        print(adict)
         if item['spider_name'] == 'x23qb':
             collention.insert(dict(item))
         self.items.append(item)
-        return item
+        return adict
 
     def close_spider(self, spider):
         if spider.name == 'novel':
@@ -35,13 +39,13 @@ class PostscrapePipeline:
                     f.write("\r\n" + item['title'] + "\r\n")
                     f.write(item['content'])
 
-
 class SplashPipeline(ImagesPipeline):
 
     # 发生图片下载请求
     def get_media_requests(self, item, info):
-        for image_url in item['image_urls']:
-            yield scrapy.Request(image_url, meta={'item': item})
+        if 'image_url' in item:
+            for image_url in item['image_urls']:
+                yield scrapy.Request(image_url, meta={'item': item})
 
     def file_path(self, request, response=None, info=None):
         item = request.meta['item']  # 通过上面的meta传递过来item
