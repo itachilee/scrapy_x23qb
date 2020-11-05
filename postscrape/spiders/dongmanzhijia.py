@@ -6,8 +6,8 @@ import selenium
 class DongmanzhijiaSpider(scrapy.Spider):
     name = 'dongmanzhijia'
     allowed_domains = ['manhua.dmzj.com']
-    start_urls = ['https://manhua.dmzj.com/reconglingkaishideyishijieshenghuodisizhang/']
-    # start_urls = ['https://manhua.dmzj.com/reconglingkaishideyishijieshenghuodisizhang/94173.shtml#@page=2']
+    # start_urls = ['https://manhua.dmzj.com/reconglingkaishideyishijieshenghuodisizhang/']
+    start_urls = ['https://www.dmzj.com/view/jinglingzhidan/59638.html#@page=1']
 
     def __init__(self):
         opt = webdriver.ChromeOptions()
@@ -18,20 +18,24 @@ class DongmanzhijiaSpider(scrapy.Spider):
 
     def parse(self, response):
         print(self.driver.get(response.url))
-        manga_lists = response.xpath('//div[@class="cartoon_online_border"]//a')
-        start_url ='https://manhua.dmzj.com/reconglingkaishideyishijieshenghuodisizhang/'
-        for manga_list in manga_lists:
-            charpter_url = manga_list.xpath('./@href').extract_first()
-            next_url = urljoin(start_url,charpter_url)
-            print(next_url)
-            yield scrapy.Request(
-                next_url,
-                callback=self.parse_manga,
-                dont_filter=True
-            )
-    def parse_manga(self,response):
-        print("parse_manga: {%s}" % self.driver.get(response.url))
-        page_lists = response.xpath('//div[@class="btmBtnBox"]/select/option')
-        print(page_lists)
-        for page_list in page_lists:
-            print(page_list)
+        item_lists = self.driver.find_elements_by_xpath('//div[@class="btmBtnBox"]/select/option')
+        for item in item_lists:
+            print(item.get_attribute('value'))
+            print(item.text)
+        # manga_lists = response.xpath('//div[@class="cartoon_online_border"]//a')
+        # start_url ='https://manhua.dmzj.com/reconglingkaishideyishijieshenghuodisizhang/'
+        # for manga_list in manga_lists:
+        #     charpter_url = manga_list.xpath('./@href').extract_first()
+        #     next_url = urljoin(start_url,charpter_url)
+        #     yield scrapy.Request(
+        #         next_url,
+        #         callback=self.parse_manga,
+        #         dont_filter=True
+        #     )
+
+    # def parse_manga(self,response):
+    #     print("parse_manga: {%s}" % self.driver.get(response.url))
+    #     page_lists = response.xpath('//div[@class="btmBtnBox"]/select/option')
+    #     print(page_lists)
+    #     for page_list in page_lists:
+    #         print(page_list)
