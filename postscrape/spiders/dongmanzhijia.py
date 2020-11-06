@@ -3,18 +3,26 @@ from urllib.parse import urljoin
 from selenium import webdriver
 import selenium
 
+
 class DongmanzhijiaSpider(scrapy.Spider):
     name = 'dongmanzhijia'
     allowed_domains = ['manhua.dmzj.com']
     # start_urls = ['https://manhua.dmzj.com/reconglingkaishideyishijieshenghuodisizhang/']
-    start_urls = ['https://www.dmzj.com/view/jinglingzhidan/59638.html#@page=1']
+    # start_urls = ['https://www.dmzj.com/view/jinglingzhidan/59638.html#@page=1']
+    start_urls = ['https://manhua.dmzj.com/reconglingkaishideyishijieshenghuodisizhang/94173.shtml#@page=1']
 
     def __init__(self):
         opt = webdriver.ChromeOptions()
+        '''
+            设置不显示图片
+        '''
         prefs = {"profile.managed_default_content_settings.images": 2}
         opt.add_experimental_option('prefs', prefs)
-        path ='D:\\webdriver\\chrome\\86\\chromedriver.exe'
-        self.driver = webdriver.Chrome(executable_path=path,options=opt)
+        '''
+            驱动地址
+        '''
+        path = 'D:\\webdriver\\chrome\\86\\chromedriver.exe'
+        self.driver = webdriver.Chrome(executable_path=path, options=opt)
 
     def parse(self, response):
         print(self.driver.get(response.url))
@@ -22,6 +30,7 @@ class DongmanzhijiaSpider(scrapy.Spider):
         for item in item_lists:
             print(item.get_attribute('value'))
             print(item.text)
+            image_url = urljoin('https://', item.get_attribute('value'))
         # manga_lists = response.xpath('//div[@class="cartoon_online_border"]//a')
         # start_url ='https://manhua.dmzj.com/reconglingkaishideyishijieshenghuodisizhang/'
         # for manga_list in manga_lists:

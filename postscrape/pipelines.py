@@ -17,7 +17,6 @@ class PostscrapePipeline:
 
     def process_item(self, item, spider):
         item['spider_name'] = spider.name
-
         if item['spider_name'] == 'x23qb':
             collention.insert(dict(item))
         self.items.append(item)
